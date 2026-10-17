@@ -1,0 +1,4 @@
+@use '../agent-events/agent-events.page';
+.reservations-panel { padding-bottom: 12px; }
+.state-cancelled { background: #f5c0ac; color: #762d1d; }
+@media (max-width: 700px) { .reservations-panel { padding: 12px; } }

@@ -20,4 +20,11 @@ describe('ClientPage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should filter available events by category', () => {
+    component.selectCategory('Pádel');
+
+    expect(component.filteredEvents.length).toBeGreaterThan(0);
+    expect(component.filteredEvents.every((event) => event.category.startsWith('Pádel'))).toBe(true);
+  });
 });

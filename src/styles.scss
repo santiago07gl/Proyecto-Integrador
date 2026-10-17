@@ -513,3 +513,88 @@ body .auth-page .profile-routes a:hover,
 body .auth-page .profile-routes a:focus-visible {
 	background: var(--street-lime);
 }
+
+.table {
+	width: 100%;
+	margin-bottom: 1rem;
+	border-color: #dee2e6;
+	border-collapse: collapse;
+	color: #212529;
+	vertical-align: top;
+}
+
+.table > :not(caption) > * > * {
+	padding: .5rem;
+	border-bottom: 1px solid #dee2e6;
+	background-color: transparent;
+}
+
+.table > thead {
+	vertical-align: bottom;
+}
+
+.table-hover > tbody > tr:hover > * {
+	background-color: #00000008;
+}
+
+.table-responsive {
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+.btn {
+	display: inline-block;
+	padding: .375rem .75rem;
+	border: 1px solid transparent;
+	border-radius: .375rem;
+	background: transparent;
+	font: inherit;
+	line-height: 1.5;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
+}
+
+.btn-dark {
+	border-color: #212529;
+	background: #212529;
+	color: #fff;
+}
+
+.btn-sm {
+	padding: .25rem .5rem;
+	border-radius: .25rem;
+	font-size: .875rem;
+}
+
+.form-control,
+.form-select {
+	display: block;
+	width: 100%;
+	padding: .375rem .75rem;
+	border: 1px solid #ced4da;
+	border-radius: .375rem;
+	background-color: #fff;
+	color: #212529;
+	font: inherit;
+	line-height: 1.5;
+}
+
+.badge {
+	display: inline-block;
+	padding: .35em .65em;
+	border-radius: .375rem;
+	font-size: .75em;
+	font-weight: 700;
+	line-height: 1;
+}
+
+body .client-shell .space-foot .reserve-button {
+	padding: 7px 11px;
+	border: 1px solid #1b201c;
+	border-radius: 3px;
+	background: #d3fa3e;
+	color: #1b201c;
+	font-size: 10px;
+	font-weight: 800;
+}

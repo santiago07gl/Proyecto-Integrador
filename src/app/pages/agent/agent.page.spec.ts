@@ -20,4 +20,9 @@ describe('AgentPage', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should show reservations assigned to the current agent', () => {
+    expect(component.reservations.length).toBeGreaterThan(0);
+    expect(component.reservations.every((reservation) => reservation.agentId === component.user.id)).toBe(true);
+  });
 });

@@ -1,53 +1,55 @@
 # EjemploAngular
+# Spotvia
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.0.
+Aplicación Angular para descubrir y administrar espacios deportivos y actividades en Tuluá, Valle del Cauca. La información se presenta con datos mock en pesos colombianos (COP); esta entrega no utiliza backend, APIs ni persistencia.
 
-## Development server
+## Requisitos
 
-To start a local development server, run:
+- Node.js compatible con Angular 22.
+- npm.
 
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Instalación y ejecución
 
 ```bash
-ng generate component component-name
+npm install
+npm start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+La aplicación queda disponible en `http://localhost:4200/`.
+
+## Vistas y rutas
+
+- `/client`: catálogo de eventos y resumen de reservas del cliente.
+- `/client/reservations`: historial y estado de las reservas del cliente.
+- `/login` y `/register`: pantallas de acceso y registro de demostración.
+- `/agent`: resumen del agente.
+- `/agent/events`: eventos publicados y formulario visual para registrar un evento.
+- `/agent/reservations`: solicitudes y estado actual de las reservas.
+- `/admin`: métricas, actividad mensual y reservas recientes.
+
+La ruta raíz y las rutas desconocidas redirigen al catálogo. El login incluye enlaces de demostración para abrir cada perfil; no hay autenticación real.
+
+## Datos mock
+
+Los modelos están en `src/app/models/spotvia.models.ts` y los servicios inyectables en `src/app/services/`:
+
+- `UserMockService`: perfiles de cliente, agente y administración.
+- `EventMockService`: catálogo y eventos del agente.
+- `ReservationMockService`: reservas por cliente y agente.
+- `AdminReportMockService`: indicadores y actividad mensual.
+
+Los botones de reserva y registro son visuales. No crean ni modifican información.
+
+## Bootstrap
+
+Se usan Bootstrap Grid, Reboot y Utilities, además de estilos locales para tablas, botones y formularios. Los archivos se integran desde `angular.json`.
+
+## Comandos
 
 ```bash
-ng generate --help
+npm run build
+npm test -- --watch=false
 ```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
 ```bash
 ng e2e
 ```

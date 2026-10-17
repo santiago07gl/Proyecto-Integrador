@@ -1,1 +1,92 @@
-<main class="dashboard"><aside class="dash-sidebar"><a class="brand" routerLink="/client"><span class="brand-mark">S</span> spotvia<span>.</span></a><p class="side-label">ESPACIO DE TRABAJO</p><a class="side-link active" routerLink="/agent"><span>▦</span> Resumen</a><a class="side-link" routerLink="/agent"><span>▣</span> Reservas <b>8</b></a><a class="side-link" routerLink="/agent"><span>⌂</span> Mis espacios</a><a class="side-link" routerLink="/agent"><span>◷</span> Disponibilidad</a><div class="dash-user"><span class="user-avatar">JR</span><span><strong>Julián Ríos</strong><small>Agente de espacios</small></span><a routerLink="/login">↗</a></div></aside><section class="dash-main"><header class="dash-top"><span>Panel de agente <i>/</i> Resumen</span><a routerLink="/agent">⌕ <span>Buscar</span></a></header><div class="dash-content"><div class="dash-heading"><div><p class="eyebrow">MARTES, 14 DE OCTUBRE</p><h1>Hola, Julián <span>✳</span></h1><p>Así se mueven tus espacios en Tuluá esta semana.</p></div><button type="button" class="period-button">Esta semana <span>⌄</span></button></div><section class="metric-grid"><article class="metric"><div><span>Reservas próximas</span><b>↗ 12%</b></div><strong>08</strong><small>vs. 7 la semana pasada</small><i class="metric-icon">▣</i></article><article class="metric"><div><span>Ingresos estimados</span><b>↗ 8%</b></div><strong>$1.245.000</strong><small>COP · esta semana</small><i class="metric-icon">$</i></article><article class="metric"><div><span>Ocupación promedio</span><b>↗ 4%</b></div><strong>76<span class="percent">%</span></strong><small>de tus horarios disponibles</small><i class="metric-icon">◷</i></article></section><section class="booking-panel"><div class="panel-heading"><div><p class="eyebrow">ACTIVIDAD RECIENTE</p><h2>Próximas reservas</h2></div><a routerLink="/agent">Ver todas <span>→</span></a></div><div class="booking-table"><div class="table-head"><span>CLIENTE</span><span>ESPACIO</span><span>FECHA Y HORA</span><span>ESTADO</span></div><div class="booking-row"><span class="client-cell"><i>ML</i><b>Mariana López<small>mariana.l@email.com</small></b></span><span>Cancha Norte · Fútbol 7</span><span>Hoy, 18:00 <small>1 hora</small></span><span class="status confirmed">Confirmada</span></div><div class="booking-row"><span class="client-cell"><i>AS</i><b>Andrés Soto<small>andres.s@email.com</small></b></span><span>Cancha Sur · Fútbol 5</span><span>Hoy, 19:30 <small>1.5 horas</small></span><span class="status pending">Pendiente</span></div><div class="booking-row"><span class="client-cell"><i>VR</i><b>Valeria Ruiz<small>valeria.r@email.com</small></b></span><span>Cancha Norte · Fútbol 7</span><span>Mañana, 10:00 <small>1 hora</small></span><span class="status confirmed">Confirmada</span></div><div class="booking-row"><span class="client-cell"><i>DG</i><b>Diego García<small>diego.g@email.com</small></b></span><span>Cancha Sur · Fútbol 5</span><span>Mié, 17:00 <small>2 horas</small></span><span class="status review">Por revisar</span></div></div></section><section class="bottom-panels"><article class="availability"><div class="panel-heading"><div><p class="eyebrow">HOY · 14 OCT</p><h2>Disponibilidad</h2></div><a routerLink="/agent">Ver agenda →</a></div><div class="availability-row"><span>Cancha Norte</span><b>4 / 8 horas</b><i><span style="width:50%"></span></i></div><div class="availability-row"><span>Cancha Sur</span><b>6 / 8 horas</b><i><span style="width:75%"></span></i></div></article><article class="quick-note"><span class="note-mark">✳</span><p class="eyebrow">BUEN TRABAJO</p><h2>Tus espacios están teniendo movimiento.</h2><p>Esta semana recibiste 3 reservas nuevas.</p></article></section></div></section></main>
+<main class="dashboard">
+  <aside class="dash-sidebar">
+    <a class="brand" routerLink="/client"
+      ><span class="brand-mark">S</span> spotvia<span>.</span></a
+    >
+    <p class="side-label">ESPACIO DE TRABAJO</p>
+    <a class="side-link active" routerLink="/agent"><span>▦</span> Resumen</a
+    ><a class="side-link" routerLink="/agent/reservations"><span>▣</span> Reservas <b>{{ reservations.length }}</b></a
+    ><a class="side-link" routerLink="/agent/events"><span>⌂</span> Mis espacios</a
+    ><a class="side-link" routerLink="/agent/events"><span>◷</span> Disponibilidad</a>
+    <div class="dash-user">
+      <span class="user-avatar">{{ user.initials }}</span
+      ><span><strong>{{ user.name }}</strong><small>{{ user.roleLabel }}</small></span
+      ><a routerLink="/login">↗</a>
+    </div>
+  </aside>
+  <section class="dash-main">
+    <header class="dash-top">
+      <span>Panel de agente <i>/</i> Resumen</span><a routerLink="/agent">⌕ <span>Buscar</span></a>
+    </header>
+    <div class="dash-content">
+      <div class="dash-heading">
+        <div>
+          <p class="eyebrow">MARTES, 14 DE OCTUBRE</p>
+          <h1>Hola, {{ user.name.split(' ')[0] }} <span>✳</span></h1>
+          <p>Así se mueven tus espacios en Tuluá esta semana.</p>
+        </div>
+        <button type="button" class="period-button">Esta semana <span>⌄</span></button>
+      </div>
+      <section class="metric-grid">
+        <article class="metric">
+          <div><span>Reservas próximas</span><b>↗ 12%</b></div>
+          <strong>{{ reservations.length.toString().padStart(2, '0') }}</strong><small>{{ pendingCount }} pendientes de respuesta</small><i class="metric-icon">▣</i>
+        </article>
+        <article class="metric">
+          <div><span>Ingresos estimados</span><b>↗ 8%</b></div>
+          <strong>{{ formatCop(confirmedRevenue) }}</strong><small>COP · reservas confirmadas</small><i class="metric-icon">$</i>
+        </article>
+        <article class="metric">
+          <div><span>Ocupación promedio</span><b>↗ 4%</b></div>
+          <strong>76<span class="percent">%</span></strong
+          ><small>de tus horarios disponibles</small><i class="metric-icon">◷</i>
+        </article>
+      </section>
+      <section class="booking-panel">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">ACTIVIDAD RECIENTE</p>
+            <h2>Próximas reservas</h2>
+          </div>
+          <a routerLink="/agent/reservations">Ver todas <span>→</span></a>
+        </div>
+        <div class="booking-table">
+          <div class="table-head">
+            <span>CLIENTE</span><span>ESPACIO</span><span>FECHA Y HORA</span><span>ESTADO</span>
+          </div>
+          @for (reservation of upcomingReservations; track reservation.id) {
+            <div class="booking-row">
+              <span class="client-cell"><i>{{ initials(reservation.clientName) }}</i><b>{{ reservation.clientName }}<small>{{ reservation.clientEmail }}</small></b></span>
+              <span>{{ reservation.eventTitle }} · {{ reservation.category }}</span>
+              <span>{{ reservation.date }}<small>{{ reservation.time }} · {{ reservation.durationHours }} h</small></span>
+              <span class="status" [class.confirmed]="reservation.status === 'confirmed'" [class.pending]="reservation.status === 'pending'" [class.review]="reservation.status === 'cancelled'">{{ statusLabel(reservation.status) }}</span>
+            </div>
+          } @empty { <p class="text-center py-4">No hay reservas asociadas a tus eventos.</p> }
+        </div>
+      </section>
+      <section class="bottom-panels">
+        <article class="availability">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">HOY · 14 OCT</p>
+              <h2>Disponibilidad</h2>
+            </div>
+            <a routerLink="/agent">Ver agenda →</a>
+          </div>
+          <div class="availability-row">
+            <span>Cancha Norte</span><b>4 / 8 horas</b><i><span style="width: 50%"></span></i>
+          </div>
+          <div class="availability-row">
+            <span>Cancha Sur</span><b>6 / 8 horas</b><i><span style="width: 75%"></span></i>
+          </div>
+        </article>
+        <article class="quick-note">
+          <span class="note-mark">✳</span>
+          <p class="eyebrow">BUEN TRABAJO</p>
+          <h2>Tus espacios están teniendo movimiento.</h2>
+          <p>Esta semana recibiste 3 reservas nuevas.</p>
+        </article>
+      </section>
+    </div>
+  </section>
+</main>

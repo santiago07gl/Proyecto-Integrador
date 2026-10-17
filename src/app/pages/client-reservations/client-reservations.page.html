@@ -1,0 +1,15 @@
+<main class="reservations-view">
+  <header class="reservations-topbar"><a class="reservations-brand" routerLink="/client"><span>S</span> spotvia<span class="brand-dot">.</span></a><nav class="route-nav"><a routerLink="/client">Explorar espacios</a><a class="active" routerLink="/client/reservations">Mis reservas</a><a routerLink="/login">Mi perfil</a></nav><a class="profile-chip" routerLink="/login"><span>{{ user.initials }}</span>{{ user.name }}</a></header>
+  <section class="reservations-content container-fluid px-4 px-lg-5 py-4">
+    <a class="back-to-catalog" routerLink="/client">← Volver a explorar</a>
+    <div class="records-heading"><div><p class="eyebrow">TU ACTIVIDAD</p><h1>Mis reservas</h1><p>Consulta tus próximos planes y el estado de cada solicitud.</p></div><span class="demo-label badge">DATOS DE DEMOSTRACIÓN</span></div>
+    <div class="row g-3 summary-row"><div class="col-12 col-sm-6 col-lg-4"><article class="summary-tile"><span>Próximas confirmadas</span><strong>{{ confirmedCount }}</strong></article></div><div class="col-12 col-sm-6 col-lg-4"><article class="summary-tile"><span>Pendientes de respuesta</span><strong>{{ pendingCount }}</strong></article></div><div class="col-12 col-lg-4"><article class="summary-tile"><span>Total de reservas</span><strong>{{ reservations.length }}</strong></article></div></div>
+    <section class="records-panel"><div class="records-panel-heading"><div><p class="eyebrow">HISTORIAL</p><h2>Actividad reciente</h2></div><span class="record-count">{{ reservations.length }} registros</span></div>
+      <div class="table-responsive"><table class="table table-hover align-middle mb-0"><thead><tr><th>ESPACIO</th><th>FECHA Y HORA</th><th>DURACIÓN</th><th>TOTAL</th><th>ESTADO</th></tr></thead><tbody>
+        @for (reservation of reservations; track reservation.id) { <tr><td><strong>{{ reservation.eventTitle }}</strong><small class="d-block text-secondary">{{ reservation.category }} · {{ reservation.id }}</small></td><td>{{ reservation.date }}<small class="d-block text-secondary">{{ reservation.time }}</small></td><td>{{ reservation.durationHours }} h</td><td>{{ formatCop(reservation.total) }}</td><td><span class="status-badge" [class.status-confirmed]="reservation.status === 'confirmed'" [class.status-pending]="reservation.status === 'pending'" [class.status-cancelled]="reservation.status === 'cancelled'">{{ statusLabel(reservation.status) }}</span></td></tr> }
+        @empty { <tr><td colspan="5" class="text-center py-5">Todavía no tienes reservas.</td></tr> }
+      </tbody></table></div>
+    </section>
+    <p class="records-note">La información de esta vista es simulada y no representa reservas reales.</p>
+  </section>
+</main>

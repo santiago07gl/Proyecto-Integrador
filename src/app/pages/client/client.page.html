@@ -3,11 +3,11 @@
 		<a class="brand" routerLink="/client" aria-label="Spotvia inicio"><span class="brand-mark">S</span> spotvia<span class="brand-dot">.</span></a>
 		<div class="sidebar-label">MENÚ</div>
 		<a class="nav-item active" routerLink="/client"><span>⌂</span> Explorar espacios</a>
-		<a class="nav-item" routerLink="/client"><span>▦</span> Mis reservas <span class="nav-count">2</span></a>
+		<a class="nav-item" routerLink="/client/reservations"><span>▦</span> Mis reservas <span class="nav-count">{{ reservations.length }}</span></a>
 		<a class="nav-item" routerLink="/client"><span>♡</span> Favoritos</a>
 		<div class="sidebar-bottom">
 			<div class="help-card"><span class="help-icon">?</span><strong>¿Necesitas ayuda?</strong><p>Estamos aquí para ayudarte a encontrar tu próximo lugar.</p><a routerLink="/client">Centro de ayuda <span>→</span></a></div>
-			<a class="profile" routerLink="/login"><span class="avatar">CM</span><span><strong>Camila Méndez</strong><small>Plan explorador</small></span><span class="profile-more">···</span></a>
+			<a class="profile" routerLink="/login"><span class="avatar">{{ user.initials }}</span><span><strong>{{ user.name }}</strong><small>{{ user.roleLabel }}</small></span><span class="profile-more">···</span></a>
 		</div>
 	</aside>
 
@@ -16,20 +16,22 @@
 		<section class="welcome"><div><p class="eyebrow">TU PRÓXIMO PLAN EMPIEZA AQUÍ</p><h1>Encuentra tu <em>espacio.</em></h1><p class="welcome-copy">Canchas, parques y lugares para moverte a tu manera.</p></div><div class="sun-mark">✳</div></section>
 
 		<section class="search-panel" aria-label="Buscar espacios">
-			<div class="search-field"><span class="field-icon">⌖</span><div><small>¿DÓNDE?</small><strong>Tuluá, Valle del Cauca</strong></div><span class="field-chevron">⌄</span></div>
-			<div class="search-field"><span class="field-icon">▦</span><div><small>¿QUÉ BUSCAS?</small><strong>Todos los espacios</strong></div><span class="field-chevron">⌄</span></div>
-			<div class="search-field"><span class="field-icon">◷</span><div><small>¿CUÁNDO?</small><strong>Elige una fecha</strong></div><span class="field-chevron">⌄</span></div>
-			<a class="search-button" routerLink="/client"><span>⌕</span> Buscar</a>
+			<div class="search-field"><span class="field-icon">⌖</span><div><small>¿DÓNDE?</small><strong>{{ user.city }}</strong></div><span class="field-chevron">⌄</span></div>
+			<div class="search-field"><span class="field-icon">▦</span><div><small>¿QUÉ BUSCAS?</small><select class="form-select form-select-sm" aria-label="Filtrar por deporte" [value]="selectedCategory" (change)="selectCategory($any($event.target).value)">@for (category of categories; track category) { <option [value]="category">{{ category === 'Todos' ? 'Todos los espacios' : category }}</option> }</select></div></div>
+			<div class="search-field"><span class="field-icon">◷</span><div><small>PRÓXIMOS DÍAS</small><strong>Horarios disponibles</strong></div><span class="field-chevron">⌄</span></div>
+			<button class="search-button btn" type="button"><span>⌕</span> Buscar</button>
 		</section>
 
-		<section class="category-row"><div><h2>¿Qué te gustaría hacer?</h2><p>Un espacio para cada forma de disfrutar.</p></div><div class="categories"><a class="category selected" routerLink="/client"><span>⚽</span> Fútbol</a><a class="category" routerLink="/client"><span>🎾</span> Pádel</a><a class="category" routerLink="/client"><span>🏀</span> Básquet</a><a class="category" routerLink="/client"><span>🌳</span> Al aire libre</a><a class="category" routerLink="/client"><span>＋</span> Ver todo</a></div></section>
+		<section class="category-row"><div><h2>¿Qué te gustaría hacer?</h2><p>Un espacio para cada forma de disfrutar.</p></div><div class="categories">@for (category of categories; track category) { <button class="category btn" type="button" [class.selected]="selectedCategory === category" (click)="selectCategory(category)">{{ category }}</button> }</div></section>
 
 		<section class="spaces-section"><div class="section-heading"><div><p class="eyebrow">SELECCIÓN SPOTVIA</p><h2>Espacios cerca de ti</h2></div><a routerLink="/client" class="view-all">Ver todos <span>→</span></a></div>
-			<div class="space-grid">
-				<article class="space-card"><div class="space-photo photo-one"><span class="photo-tag">MÁS RESERVADO</span><button class="favorite" aria-label="Añadir a favoritos">♡</button><span class="photo-caption">01 / 04</span></div><div class="space-info"><div class="space-title"><h3>Cancha La 40</h3><span class="rating">★ 4.9</span></div><p class="space-meta">⌖ Tuluá, Valle del Cauca <span>·</span> Fútbol 7</p><div class="space-foot"><strong>$85.000 <small>COP / hora</small></strong><a routerLink="/client">Ver espacio <span>→</span></a></div></div></article>
-				<article class="space-card"><div class="space-photo photo-two"><span class="photo-tag">NUEVO</span><button class="favorite" aria-label="Añadir a favoritos">♡</button><span class="photo-caption">02 / 04</span></div><div class="space-info"><div class="space-title"><h3>Punto Cero Pádel</h3><span class="rating">★ 4.8</span></div><p class="space-meta">⌖ Tuluá, Valle del Cauca <span>·</span> Pádel</p><div class="space-foot"><strong>$62.000 <small>COP / hora</small></strong><a routerLink="/client">Ver espacio <span>→</span></a></div></div></article>
-				<article class="space-card"><div class="space-photo photo-three"><span class="photo-tag">AIRE LIBRE</span><button class="favorite" aria-label="Añadir a favoritos">♡</button><span class="photo-caption">03 / 04</span></div><div class="space-info"><div class="space-title"><h3>Parque Deportivo Tuluá</h3><span class="rating">★ 4.7</span></div><p class="space-meta">⌖ Tuluá, Valle del Cauca <span>·</span> Multiusos</p><div class="space-foot"><strong>$40.000 <small>COP / hora</small></strong><a routerLink="/client">Ver espacio <span>→</span></a></div></div></article>
-			</div>
+			<div class="space-grid">@for (event of filteredEvents; track event.id) {
+				<article class="space-card"><div [class]="'space-photo ' + event.imageClass"><span class="photo-tag">{{ event.category }}</span><button class="favorite btn" type="button" [attr.aria-label]="'Calificar ' + event.title">♡</button><span class="photo-caption">{{ event.availableSlots }} cupos</span></div><div class="space-info"><div class="space-title"><h3>{{ event.title }}</h3><span class="rating">★ {{ event.rating }}</span></div><p class="space-meta">⌖ {{ event.city }} <span>·</span> {{ event.address }}</p><p class="space-meta">{{ event.date }} · desde {{ event.startTime }}</p><div class="space-foot"><strong>{{ formatCop(event.pricePerHour) }} <small>/ hora</small></strong><button class="reserve-button btn btn-sm" type="button" [attr.aria-label]="'Reservar ' + event.title">Reservar</button></div></div></article>
+			} @empty { <p class="empty-state">No hay eventos en esta categoría por ahora.</p> }</div>
+		</section>
+
+		<section class="client-bookings" id="reservations"><div class="section-heading"><div><p class="eyebrow">TU ACTIVIDAD</p><h2>Mis próximas reservas</h2></div><a routerLink="/client/reservations" class="view-all">Ver todas <span>→</span></a></div>
+			<div class="booking-preview">@for (reservation of reservations; track reservation.id) { <div class="booking-preview-row"><span><strong>{{ reservation.eventTitle }}</strong><small>{{ reservation.date }} · {{ reservation.time }}</small></span><span class="status" [class.confirmed]="reservation.status === 'confirmed'" [class.pending]="reservation.status === 'pending'" [class.cancelled]="reservation.status === 'cancelled'">{{ reservation.status === 'confirmed' ? 'Confirmada' : reservation.status === 'pending' ? 'Pendiente' : 'Cancelada' }}</span><strong>{{ formatCop(reservation.total) }}</strong></div> }</div>
 		</section>
 		<footer class="page-footer"><span>© 2025 Spotvia</span><span>Hecho para encontrarnos afuera <b>✳</b></span></footer>
 	</section>

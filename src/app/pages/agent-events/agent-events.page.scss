@@ -1,0 +1,31 @@
+.agent-workspace { min-height: 100vh; background: #e9ebe3; color: #1b201c; }
+.workspace-topbar { display: flex; min-height: 64px; align-items: center; gap: 32px; padding: 0 5%; background: #1b201c; color: #f6f7f1; }
+.workspace-brand { display: flex; align-items: center; gap: 8px; color: inherit; font-size: 19px; font-weight: 800; text-decoration: none; }
+.workspace-brand > span:first-child { display: grid; width: 28px; height: 28px; place-items: center; background: #d3fa3e; color: #1b201c; }
+.brand-dot { margin-left: -8px; color: #f06b3e; }
+.workspace-nav { display: flex; align-self: stretch; gap: 23px; }
+.workspace-nav a { display: flex; align-items: center; border-bottom: 3px solid transparent; color: #c4c9c0; font-size: 10px; text-decoration: none; }
+.workspace-nav a.active { border-color: #d3fa3e; color: #fff; }
+.workspace-user { margin-left: auto; color: #f6f7f1; font-size: 10px; text-decoration: none; }
+.workspace-content { max-width: 1520px; margin: auto; }
+.workspace-heading { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-bottom: 20px; }
+.eyebrow { margin: 0 0 7px; color: #bb4927; font-size: 8px; font-weight: 800; letter-spacing: 1.3px; }
+.workspace-heading h1 { margin: 0; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 34px; font-weight: 400; text-transform: uppercase; }
+.workspace-heading p:last-child { margin: 6px 0 0; color: #70786e; font-size: 11px; }
+.demo-label { border: 1px solid #1b201c; border-radius: 2px; background: #d3fa3e; color: #1b201c; font-size: 8px; }
+.workspace-panel { overflow: hidden; padding: 17px; border: 1px solid #1b201c; background: #f8f8f2; box-shadow: 3px 3px 0 #1b201c; }
+.panel-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.panel-head h2,.new-event-panel h2 { margin: 0; font-size: 16px; }
+.panel-counter { display: grid; width: 28px; height: 28px; place-items: center; background: #d3fa3e; font-size: 11px; font-weight: 800; }
+.workspace-panel .table { --bs-table-bg: transparent; font-size: 10px; }
+.workspace-panel .table thead th { color: #737c70; font-size: 8px; letter-spacing: .7px; white-space: nowrap; }
+.workspace-panel .table td { padding-top: 13px; padding-bottom: 13px; }
+.event-state { display: inline-block; padding: 5px 7px; border: 1px solid currentColor; font-size: 8px; font-weight: 700; white-space: nowrap; }
+.state-active { background: #d3fa3e; color: #1b201c; }.state-review { background: #f8d1a3; color: #603a1b; }
+.new-event-panel { padding: 19px; }
+.panel-intro { margin: 8px 0 16px; color: #757d73; font-size: 10px; }
+.new-event-panel .form-label { display: block; margin-bottom: 12px; font-size: 9px; font-weight: 700; }
+.new-event-panel .form-control,.new-event-panel .form-select { margin-top: 5px; border-color: #aeb5aa; border-radius: 2px; font-size: 10px; }
+.new-event-panel .btn { border-radius: 2px; font-size: 10px; }
+.form-note { display: block; margin-top: 9px; color: #858d82; font-size: 8px; text-align: center; }
+@media (max-width: 700px) { .workspace-topbar { flex-wrap: wrap; gap: 8px 18px; padding: 12px 18px; }.workspace-nav { order: 3; width: 100%; min-height: 35px; gap: 18px; }.workspace-user span { display: none; }.workspace-heading { align-items: flex-start; flex-direction: column; } }
