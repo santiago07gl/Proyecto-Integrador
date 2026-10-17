@@ -1,1 +1,480 @@
-/* You can add global styles to this file, and also import other style files */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	min-height: 100%;
+	margin: 0;
+}
+
+:root {
+	--street-ink: #1b201c;
+	--street-paper: #f0f1e9;
+	--street-lime: #d3fa3e;
+	--street-orange: #f06b3e;
+	--street-line: #cdd1c6;
+}
+
+body {
+.client-shell {
+	color: var(--street-ink);
+	background-color: var(--street-paper);
+	background-image: radial-gradient(#20251c12 0.7px, transparent 0.7px);
+	background-size: 8px 8px;
+}
+
+.client-shell .sidebar {
+	border-right: 0;
+	background: var(--street-ink);
+	color: #f6f7f1;
+}
+
+.client-shell .brand,
+.dashboard .brand,
+.admin-dashboard .brand {
+	color: #f6f7f1;
+}
+
+.client-shell .brand-mark,
+.dashboard .brand-mark,
+.admin-dashboard .brand-mark {
+	border-radius: 3px;
+	background: var(--street-lime);
+	color: var(--street-ink);
+}
+
+.client-shell .brand-dot,
+.dashboard .brand > span:last-child,
+.admin-dashboard .brand > span:last-child {
+	color: var(--street-orange);
+}
+
+.client-shell .sidebar-label {
+	color: #aeb5aa;
+}
+
+.client-shell .nav-item {
+	border-radius: 3px;
+	color: #ccd1c8;
+}
+
+.client-shell .nav-item > span:first-child {
+	color: #b4bbae;
+}
+
+.client-shell .nav-item.active {
+	background: var(--street-lime);
+	color: var(--street-ink);
+}
+
+.client-shell .nav-item.active > span:first-child,
+.client-shell .nav-count {
+	color: var(--street-ink);
+}
+
+.client-shell .nav-count {
+	background: #f7f8f1;
+}
+
+.client-shell .help-card {
+	border: 1px solid #626a5e;
+	border-radius: 3px;
+	background: #282e28;
+}
+
+.client-shell .help-card strong,
+.client-shell .profile {
+	color: #f6f7f1;
+}
+
+.client-shell .help-icon {
+	border-radius: 3px;
+	border-color: var(--street-lime);
+	color: var(--street-lime);
+}
+
+.client-shell .help-card p,
+.client-shell .profile small {
+	color: #b8c0b5;
+}
+
+.client-shell .profile {
+	border-color: #444b42;
+}
+
+.client-shell .main-content {
+	background-image: repeating-linear-gradient(135deg, transparent 0 36px, #22281c06 36px 37px);
+}
+
+.client-shell .topbar {
+	border-color: var(--street-line);
+}
+
+.client-shell .eyebrow {
+	color: #c34b27;
+}
+
+.client-shell .welcome h1,
+.auth-page .story-copy h1,
+.auth-page .auth-form h2,
+.register-page .register-form h1,
+.register-page .art-copy h2 {
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-weight: 400;
+	letter-spacing: 0;
+}
+
+.client-shell .welcome h1 {
+	text-transform: uppercase;
+}
+
+.client-shell .welcome h1 em {
+	color: var(--street-orange);
+	font-family: inherit;
+	font-style: normal;
+}
+
+.client-shell .sun-mark {
+	width: 86px;
+	height: 86px;
+	border: 2px dashed var(--street-ink);
+	border-radius: 3px;
+	color: var(--street-orange);
+	transform: rotate(-7deg);
+}
+
+.client-shell .search-panel {
+	border: 2px solid var(--street-ink);
+	border-radius: 3px;
+	box-shadow: 4px 4px 0 var(--street-ink);
+}
+
+.client-shell .field-icon {
+	color: #c34b27;
+}
+
+.client-shell .search-button,
+.client-shell .category.selected {
+	border-radius: 3px;
+	background: var(--street-lime);
+	color: var(--street-ink);
+}
+
+.client-shell .search-button {
+	border: 1px solid var(--street-ink);
+}
+
+.client-shell .search-button span {
+	color: #c34b27;
+}
+
+.client-shell .category {
+	border-color: var(--street-ink);
+	border-radius: 3px;
+}
+
+.client-shell .category.selected {
+	border-color: var(--street-ink);
+}
+
+.client-shell .space-card {
+	border: 1px solid var(--street-ink);
+	border-radius: 3px;
+	box-shadow: 3px 3px 0 #1b201c;
+}
+
+.client-shell .photo-tag {
+	border-radius: 2px;
+	background: var(--street-lime);
+	color: var(--street-ink);
+}
+
+.client-shell .space-foot a,
+.client-shell .view-all {
+	color: #b74425;
+}
+
+.dashboard,
+.admin-dashboard {
+	--forest: var(--street-ink);
+	--ink: var(--street-ink);
+	--muted: #697067;
+	background-color: #e9ebe3;
+	background-image: radial-gradient(#20251c18 0.7px, transparent 0.7px);
+	background-size: 9px 9px;
+}
+
+.dashboard .dash-sidebar,
+.admin-dashboard .admin-sidebar {
+	border-right: 0;
+	background: var(--street-ink);
+}
+
+.dashboard .side-label,
+.admin-dashboard .side-label {
+	color: #aeb5aa;
+}
+
+.dashboard .side-link,
+.admin-dashboard .admin-link {
+	border-radius: 3px;
+	color: #ccd1c8;
+}
+
+.dashboard .side-link > span,
+.admin-dashboard .admin-link > span {
+	color: #b4bbae;
+}
+
+.dashboard .side-link.active,
+.admin-dashboard .admin-link.active {
+	background: var(--street-lime);
+	color: var(--street-ink);
+}
+
+.dashboard .side-link.active > span,
+.admin-dashboard .admin-link.active > span {
+	color: var(--street-ink);
+}
+
+.dashboard .side-link b,
+.admin-dashboard .admin-link b {
+	background: var(--street-orange);
+	color: #fff;
+}
+
+.dashboard .dash-user,
+.admin-dashboard .admin-profile {
+	border-color: #444b42;
+}
+
+.dashboard .dash-user strong,
+.admin-dashboard .admin-profile strong {
+	color: #f6f7f1;
+}
+
+.dashboard .dash-user small,
+.admin-dashboard .admin-profile small {
+	color: #b8c0b5;
+}
+
+.dashboard .dash-top,
+.admin-dashboard .admin-topbar {
+	border-color: var(--street-line);
+	background: #f8f8f2;
+}
+
+.dashboard .eyebrow,
+.admin-dashboard .eyebrow {
+	color: #c34b27;
+}
+
+.dashboard .metric,
+.dashboard .booking-panel,
+.dashboard .availability,
+.dashboard .quick-note,
+.admin-dashboard .admin-metric,
+.admin-dashboard .chart-panel,
+.admin-dashboard .review-panel,
+.admin-dashboard .recent-panel {
+	border: 1px solid var(--street-ink);
+	border-radius: 3px;
+	box-shadow: 3px 3px 0 var(--street-ink);
+}
+
+.dashboard .metric-icon,
+.admin-dashboard .metric-symbol {
+	background: var(--street-lime);
+	color: var(--street-ink);
+}
+
+.dashboard .period-button,
+.admin-dashboard .admin-heading button {
+	border: 1px solid var(--street-ink);
+	border-radius: 3px;
+	background: var(--street-lime);
+	color: var(--street-ink);
+}
+
+.dashboard .quick-note,
+.admin-dashboard .admin-note {
+	border-color: var(--street-ink);
+	border-radius: 3px;
+	background: #f5d7b8;
+	color: #62361f;
+}
+
+.admin-dashboard .chart-key i,
+.admin-dashboard .bars span {
+	background: var(--street-orange);
+}
+
+.admin-dashboard .bars span:nth-child(3n) {
+	background: var(--street-lime);
+}
+
+.auth-page,
+.register-page {
+	--forest: var(--street-ink);
+	--street-copy: #29302a;
+	background-color: var(--street-paper);
+	background-image: radial-gradient(#20251c12 0.7px, transparent 0.7px);
+	background-size: 8px 8px;
+}
+
+.auth-story {
+	background-color: var(--street-ink);
+	background-image: repeating-linear-gradient(135deg, #ffffff08 0 1px, transparent 1px 22px);
+}
+
+.auth-story::after,
+.register-art::after {
+	position: absolute;
+	inset: 0;
+	background-image: radial-gradient(#d3fa3e56 0.7px, transparent 0.7px);
+	background-size: 9px 9px;
+	content: '';
+	opacity: .35;
+	pointer-events: none;
+}
+
+.auth-page .brand-mark,
+.register-page .brand-mark {
+	border-radius: 3px;
+	background: var(--street-lime);
+	color: var(--street-ink);
+}
+
+.auth-page .brand > span:last-child,
+.register-page .brand > span:last-child {
+	color: var(--street-orange);
+}
+
+.auth-page .story-copy h1,
+.register-page .art-copy h2 {
+	text-transform: uppercase;
+}
+
+.auth-page .story-copy h1 em,
+.register-page .art-copy h2 em {
+	color: var(--street-lime);
+	font-family: inherit;
+	font-style: normal;
+}
+
+.auth-page .story-note span:first-child {
+	color: var(--street-orange);
+}
+
+.auth-form-wrap,
+.register-main {
+	background-color: var(--street-paper);
+	background-image: radial-gradient(#20251c12 0.7px, transparent 0.7px);
+	background-size: 8px 8px;
+}
+
+.auth-page .auth-form .eyebrow,
+.register-page .eyebrow {
+	color: #c34b27;
+}
+
+.auth-page .auth-form input,
+.register-page .register-form input:not([type=checkbox]) {
+	border-color: #8e9489;
+	border-radius: 3px;
+}
+
+.auth-page .auth-form input:focus,
+.register-page .register-form input:focus {
+	outline: 2px solid var(--street-orange);
+}
+
+.auth-page .primary-button,
+.register-page .create-button {
+	border: 1px solid var(--street-ink);
+	border-radius: 3px;
+	background: var(--street-lime);
+	color: var(--street-ink);
+}
+
+.auth-page .primary-button span,
+.register-page .create-button span {
+	color: #c34b27;
+}
+
+.auth-page .google-button,
+.register-page .role {
+	border-radius: 3px;
+}
+
+.auth-page .switch-auth a,
+.auth-page .preview-link,
+.register-page .check-row a,
+.register-page .login-prompt a {
+	color: #b74425;
+}
+
+.register-page .role.active {
+	border-color: var(--street-ink);
+	background: var(--street-lime);
+	color: var(--street-ink);
+}
+
+.register-art {
+	background-color: var(--street-ink);
+}
+}
+
+body .client-shell.client-shell {
+	--ink: var(--street-ink);
+	--muted: #697067;
+	--line: var(--street-line);
+	--green: var(--street-ink);
+	--lime: var(--street-lime);
+	background-color: var(--street-paper);
+	background-image: radial-gradient(#20251c12 0.7px, transparent 0.7px);
+	background-size: 8px 8px;
+}
+
+body .client-shell.client-shell.client-shell .welcome h1 em {
+	color: var(--street-orange);
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-style: normal;
+}
+
+body .dashboard.dashboard,
+body .admin-dashboard.admin-dashboard {
+	--forest: var(--street-ink);
+	--ink: var(--street-ink);
+	--muted: #697067;
+	background-color: #e9ebe3;
+	background-image: radial-gradient(#20251c18 0.7px, transparent 0.7px);
+	background-size: 9px 9px;
+}
+
+body .auth-page.auth-page,
+body .register-page.register-page {
+	--forest: var(--street-ink);
+	background-color: var(--street-paper);
+	background-image: radial-gradient(#20251c12 0.7px, transparent 0.7px);
+	background-size: 8px 8px;
+}
+
+body .auth-page .auth-story.auth-story {
+	background-color: var(--street-ink);
+	background-image: repeating-linear-gradient(135deg, #ffffff08 0 1px, transparent 1px 22px);
+}
+
+body .auth-page .auth-form-wrap.auth-form-wrap,
+body .register-page .register-main.register-main {
+	background-color: var(--street-paper);
+	background-image: radial-gradient(#20251c12 0.7px, transparent 0.7px);
+	background-size: 8px 8px;
+}
+
+body .register-page .register-art.register-art {
+	background-color: var(--street-ink);
+}

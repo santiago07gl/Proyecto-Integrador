@@ -1,0 +1,80 @@
+.admin-dashboard { --ink: #26322a; --green: #244c3b; min-height: 100vh; display: grid; grid-template-columns: 225px minmax(0, 1fr); background: #f7f9f6; color: var(--ink); font-family: 'Trebuchet MS', sans-serif; }
+.admin-sidebar { position: sticky; top: 0; display: flex; height: 100vh; flex-direction: column; padding: 27px 15px 17px; border-right: 1px solid #e7ebe6; background: white; }
+.brand { display: flex; align-items: center; gap: 8px; margin: 0 10px 48px; color: var(--ink); font-size: 21px; font-weight: 800; text-decoration: none; }
+.brand > span:last-child { margin-left: -8px; color: #729852; }
+.brand-mark { display: grid; width: 29px; height: 29px; place-items: center; border-radius: 9px 9px 9px 3px; background: var(--green); color: white; font-size: 16px; }
+.side-label { margin: 0 10px 11px; color: #a0aaa2; font-size: 8px; font-weight: 700; letter-spacing: 1.2px; }
+.admin-link { display: flex; align-items: center; gap: 11px; padding: 11px 10px; border-radius: 5px; color: #69746c; font-size: 11px; text-decoration: none; }
+.admin-link > span { width: 16px; color: #839087; font-size: 16px; text-align: center; }
+.admin-link.active { background: #eef4e9; color: var(--green); font-weight: 700; }
+.admin-link b { margin-left: auto; padding: 3px 6px; border-radius: 9px; background: #fcf3df; color: #98712e; font-size: 9px; }
+.admin-profile { display: flex; align-items: center; gap: 9px; margin-top: auto; padding: 13px 2px 0; border-top: 1px solid #e7ebe6; }
+.admin-avatar { display: grid; width: 31px; height: 31px; place-items: center; border-radius: 50%; background: #e9ded0; color: #6d4d37; font-size: 10px; font-weight: 700; }
+.admin-profile strong,.admin-profile small { display: block; }
+.admin-profile strong { font-size: 10px; }
+.admin-profile small { margin-top: 3px; color: #849087; font-size: 9px; }
+.admin-profile a { margin-left: auto; color: #748075; text-decoration: none; }
+.admin-main { min-width: 0; }
+.admin-topbar { display: flex; height: 59px; align-items: center; justify-content: space-between; padding: 0 4%; border-bottom: 1px solid #e7ebe6; background: white; color: #68736c; font-size: 10px; }
+.admin-topbar i { margin: 0 8px; color: #b5beb7; font-style: normal; }
+.admin-topbar > div { display: flex; align-items: center; gap: 7px; }
+.online-dot { width: 6px; height: 6px; border-radius: 50%; background: #72a85d; }
+.admin-topbar a { margin-left: 15px; color: #6e7a70; font-size: 16px; text-decoration: none; }
+.admin-content { width: min(100%, 1320px); margin: 0 auto; padding: 27px 4%; }
+.admin-heading { display: flex; align-items: center; justify-content: space-between; margin-bottom: 19px; }
+.eyebrow { margin: 0 0 6px; color: #839572; font-size: 8px; font-weight: 700; letter-spacing: 1.5px; }
+.admin-heading h1 { margin: 0; font-size: 23px; letter-spacing: -.7px; }
+.admin-heading p:last-child { margin: 6px 0 0; color: #849087; font-size: 10px; }
+.admin-heading button { padding: 9px 11px; border: 1px solid #e1e7df; border-radius: 5px; background: white; color: #536157; font: inherit; font-size: 9px; }
+.admin-heading button span { margin-left: 10px; }
+.admin-metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 11px; }
+.admin-metric { position: relative; min-height: 105px; padding: 13px; border: 1px solid #e7ebe6; border-radius: 5px; background: white; }
+.admin-metric > span { color: #718076; font-size: 9px; }
+.admin-metric > div { display: flex; align-items: baseline; gap: 8px; margin-top: 13px; }
+.admin-metric strong { font-size: 22px; letter-spacing: -.7px; }
+.admin-metric b { color: #578149; font-size: 8px; }
+.admin-metric > small { display: block; margin-top: 4px; color: #929c94; font-size: 8px; }
+.metric-symbol { position: absolute; top: 11px; right: 12px; color: #879d76; font-size: 15px; font-style: normal; }
+.user-symbol { display: none; }
+.admin-middle { display: grid; grid-template-columns: 1.7fr 1fr; gap: 12px; margin-top: 12px; }
+.chart-panel,.review-panel,.recent-panel { border: 1px solid #e7ebe6; border-radius: 5px; background: white; }
+.chart-panel,.review-panel { padding: 14px; }
+.panel-title { display: flex; align-items: center; justify-content: space-between; }
+.panel-title .eyebrow { margin-bottom: 5px; }
+.panel-title h2 { margin: 0; font-size: 13px; }
+.chart-key { color: #829087; font-size: 8px; }
+.chart-key i { display: inline-block; width: 7px; height: 7px; margin-right: 5px; border-radius: 50%; background: #83a86b; }
+.chart { display: grid; grid-template-columns: 28px 1fr; height: 130px; margin-top: 16px; }
+.chart-labels { display: flex; flex-direction: column; justify-content: space-between; color: #9ca69e; font-size: 8px; }
+.chart-plot { position: relative; display: flex; align-items: end; justify-content: space-around; padding: 0 8px; }
+.gridline { position: absolute; right: 0; left: 0; height: 1px; background: #f0f2ef; }
+.gridline:nth-child(1) { top: 0; }.gridline:nth-child(2) { top: 25%; }.gridline:nth-child(3) { top: 50%; }.gridline:nth-child(4) { top: 75%; }
+.bars { z-index: 1; display: flex; width: 100%; height: 100%; align-items: end; justify-content: space-around; gap: 7px; }
+.bars span { width: min(24px, 7%); border-radius: 3px 3px 0 0; background: #8caf77; }
+.bars span:nth-child(3n) { background: #bfd2b2; }
+.chart-months { display: flex; justify-content: space-around; margin: 8px 0 0 28px; color: #9ca69e; font-size: 8px; }
+.review-count { display: grid; width: 23px; height: 23px; place-items: center; border-radius: 50%; background: #fcf3df; color: #98712e; font-size: 9px; font-weight: 700; }
+.review-item { display: flex; align-items: center; gap: 9px; margin-top: 13px; padding: 10px 0; border-top: 1px solid #f0f2ef; }
+.review-item > i { display: grid; width: 27px; height: 27px; place-items: center; border-radius: 5px; background: #f3f6ef; color: #718a5d; font-size: 14px; font-style: normal; }
+.review-item .flag-icon { background: #faf1e9; color: #ad7951; }
+.review-item b,.review-item small { display: block; }
+.review-item b { font-size: 9px; }
+.review-item small { margin-top: 4px; color: #929c94; font-size: 8px; }
+.review-item a { margin-left: auto; color: #7b897e; text-decoration: none; }
+.admin-note { display: flex; align-items: center; gap: 9px; margin-top: 5px; padding: 9px; border-radius: 4px; background: #f0f5ec; color: #658251; }
+.admin-note > span { font-size: 17px; }
+.admin-note p { margin: 0; }
+.admin-note b,.admin-note small { display: block; }
+.admin-note b { font-size: 8px; }
+.admin-note small { margin-top: 3px; color: #87947f; font-size: 8px; }
+.recent-panel { margin-top: 12px; padding: 14px 15px 3px; }
+.recent-panel > .panel-title { margin-bottom: 12px; }
+.recent-panel > .panel-title > a { color: #527842; font-size: 9px; font-weight: 700; text-decoration: none; }
+.recent-head,.recent-row { display: grid; grid-template-columns: .8fr 1.1fr 1.2fr 1fr .8fr; align-items: center; gap: 8px; }
+.recent-head { padding: 9px 0; border-top: 1px solid #edf0ec; color: #99a29a; font-size: 7px; font-weight: 700; letter-spacing: .6px; }
+.recent-row { min-height: 36px; border-top: 1px solid #f0f2ef; color: #68736c; font-size: 8px; }
+.recent-row > b { color: #46564a; font-size: 8px; }
+.recent-row > i { width: max-content; padding: 4px 6px; border-radius: 10px; font-size: 7px; font-style: normal; }
+.ok-state { background: #edf5e9; color: #527842; }.wait-state { background: #fcf3df; color: #98712e; }
+@media (max-width: 900px) { .admin-dashboard { grid-template-columns: 62px minmax(0, 1fr); } .admin-sidebar { align-items: center; padding: 18px 8px; } .brand { margin: 0 0 35px; font-size: 0; } .brand > span:last-child,.side-label,.admin-link:not(.active),.admin-profile > span:not(.admin-avatar),.admin-profile a { display: none; } .admin-link.active { font-size: 0; } .admin-link > span { font-size: 18px; } .admin-profile { margin-top: auto; border: 0; } }
+@media (max-width: 650px) { .admin-content { padding: 20px 13px; } .admin-metrics { grid-template-columns: 1fr 1fr; } .admin-metric { min-height: 92px; } .admin-middle { grid-template-columns: 1fr; } .recent-panel { overflow-x: auto; }.recent-table { min-width: 580px; } .admin-heading h1 { font-size: 20px; } .admin-heading button { font-size: 8px; } }
