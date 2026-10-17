@@ -478,3 +478,38 @@ body .register-page .register-main.register-main {
 body .register-page .register-art.register-art {
 	background-color: var(--street-ink);
 }
+
+body .auth-page .profile-routes {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 7px;
+	margin-top: 19px;
+	padding-top: 13px;
+	border-top: 1px solid var(--street-line);
+}
+
+body .auth-page .profile-routes > span {
+	width: 100%;
+	color: #717a70;
+	font-size: 8px;
+	font-weight: 700;
+	letter-spacing: 1px;
+	text-align: center;
+}
+
+body .auth-page .profile-routes a {
+	padding: 6px 9px;
+	border: 1px solid var(--street-ink);
+	border-radius: 3px;
+	color: var(--street-ink);
+	font-size: 9px;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+body .auth-page .profile-routes a:hover,
+body .auth-page .profile-routes a:focus-visible {
+	background: var(--street-lime);
+}
